@@ -1,0 +1,16 @@
+Q1 - 10 points
+How many files are present inside the archive?
+ gzip -d secrets.tar.gz
+ tar -xf secrets.tar
+	
+Q2 - 20 points
+What is the flag?
+ cat flag.txt
+	
+Q3 - 30 points
+What is the name of the user that created the flag file?
+	?
+  
+Q4 - 40 points
+When was the flag file created? (in UTC)
+ ?
