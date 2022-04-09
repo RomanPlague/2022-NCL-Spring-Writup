@@ -1,0 +1,27 @@
+Q1 - 10 points
+What channel was the victim network operating on?
+	Hit the wireless tab and select wlan
+  only one network look at channel
+  
+Q2 - 10 points
+What is the ESSID of the wifi network that was hacked?
+	hit the wireless tab
+  ssid of the one network
+  
+Q3 - 15 points
+What is the MAC address of the victim that was deauthenticated?
+	under wireless and wan tab, hit the drop down menu
+  there are 3 devices that have sent deauth packets
+  1 is the base device or router so we can ignore that
+  apply the other 2 as filters and you can see that on is constantly requesting from the other
+  this makes the other device the target
+  
+Q4 - 10 points
+What company is assigned the OUI of the victim's MAC address?
+	once you get the mac address you can look up the oui or wireshark will probably resolve it for you
+  
+Q5 - 25 points
+What is the wireless password (in hex)?
+ password is wep so:
+ aircrack-ng -z Cracking\ 1.cap
+ copy the hex that looks kinda like a mac address
