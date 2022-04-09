@@ -1,0 +1,25 @@
+Q1 - 15 points
+How many people are emailing from the corporate megacorp.xyz domain?
+	$ cat emails.log|awk -F'From : | ' '{if ($7 ~ "megacorp.xyz"){print $7}}'|sort|uniq|wc -l
+  
+Q2 - 15 points
+Which email address has the most sent emails?
+	$ cat emails.log|awk -F'From : | ' '{if ($7 ~ "megacorp.xyz"){print $7}}'|sort|uniq -c|sort -n|tail
+  
+Q3 - 10 points
+How many emails has the above email address sent?
+	$ cat emails.log|awk -F'From : | ' '{if ($7 ~ "megacorp.xyz"){print $7}}'|sort|uniq -c|sort -n|tail
+  
+Q4 - 40 points
+Which email address sent the suspicious email?
+ $ cat emails.log|awk -F'From : | ' '{print $7 $8}'|sort|uniq|sort
+ notice how jamaal has 2 different ips, only person who logged in at different places
+ $ cat emails.log|awk -F'From : | ' '{print $8$7}'|sort|uniq|sort -n
+ notice how she has the same ip as jamaal, only email that has same origin ip
+ Lonie.Harber@hotmail.com
+
+	
+Q5 - 40 points
+Which email address received the suspicious email?
+ $ cat emails.log|awk -F'From : | ' '{if ($7 ~ "Lonie.Harber@hotmail.com"){print $3$4}}'|sort|uniq -c|sort -n
+ notice how jamaal is the only one who is sent to twice, and how the second ip is the same as the source ip
