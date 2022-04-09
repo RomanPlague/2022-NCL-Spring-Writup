@@ -1,0 +1,25 @@
+Q1 - 10 points
+How many requests did the server receive?
+	$ cat iis.log|wc -l
+  
+Q2 - 15 points
+What was the name and full version number of the most common browser (Answer format: Browser Number) ?
+	$ cat iis.log|awk -F' ' '{print $10}'|sort|uniq -c|sort -n
+  
+  https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent
+  
+Q3 - 15 points
+How many requests came from said browser?
+	$ cat iis.log|awk -F' ' '{print $10}'|sort|uniq -c|sort -n
+  
+Q4 - 10 points
+What version of mass scan was used against this site?
+	?
+  
+Q5 - 30 points
+How many unique ip addresses accessed the server?
+	$ cat iis.log|awk -F' ' '{print $9}'|sort -n|uniq -c|wc -l
+  
+Q6 - 30 points
+How many posts requests where made to the server?
+ $ cat iis.log|awk -F' ' '{print $4}'|sort -n|uniq -c|sort -n
