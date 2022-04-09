@@ -1,0 +1,35 @@
+Q1 - 10 points
+What application protocol was used to facilitate the data transfer? 
+  ftp is the only data protocol
+	
+Q2 - 10 points
+What is the username and password used to login to the service? Format should be username:password
+	use 'ftp' as filter in wireshark
+  
+Q3 - 10 points
+What is the IP address of the server?
+  check source of where the responses are
+  
+	
+Q4 - 10 points
+What is the numeric error code the server sent the first time the upload was attempted?
+  use 'ftp&&ip.src==172.23.0.27' and look for reponse code that is not in the 200 range
+	
+Q5 - 15 points
+What is the full file path of the file that was uploaded to the server?
+  right click on the ftp packet storing the data, follow, and tcp stream
+  here if you scroll up it will say CWD asd and then a response of current directory is /asd
+
+Q6 - 15 points
+How many different orders were listed in the spreadsheet that was uploaded to the server?
+	use 'ftp-data' as filter
+  right click on packet that has data, and copy as readable text
+  paste into document
+  $ cat New\ File|awk -F',' '{print $1}'|sort -n|uniq|wc -l 
+  
+Q7 - 20 points
+What is the flag that was downloaded from the server?
+ In wireshark use 'ftp-data' as filter
+ find the retr flag.png packet and open it
+ click the actual png data then click File, then 'export packet bytes...'
+ view picture for flag
