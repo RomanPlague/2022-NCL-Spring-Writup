@@ -14,7 +14,7 @@ How many requests came from said browser?
   
 Q4 - 10 points
 What version of mass scan was used against this site?
-	?
+	$ grep -i massscan iis.log
   
 Q5 - 30 points
 How many unique ip addresses accessed the server?
